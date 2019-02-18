@@ -26,8 +26,8 @@ load_model <- function(species = 'Hs', family, name, version = 'latest') {
         message(paste0('Model: ', data_name, ' not found'))
         return(NULL)
         }
-    envir <- get('.npa_models', envir = globalenv())
-    do.call("data", list(data_name, envir=envir))
+    #envir <- get('.npa_models', envir = globalenv())
+    do.call("data", list(data_name))
     return(invisible(NPAModel$new(data_name)))
 }
 
